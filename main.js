@@ -51,7 +51,6 @@ function roundResult(value) {
 
 function clearDisplay() {
     display.textContent = '';
-    needScreenReset=false;
 }
 
 function add(a, b) {
@@ -87,10 +86,14 @@ function operate(operator, a, b) {
     }
 }
 
+function changeSign(){
+    display.textContent = -Number(display.textContent);
+}
 
 //event listeners
 clearBtn.addEventListener('click', clearDisplay);
 equalBtn.addEventListener('click', getResult);
+negBtn.addEventListener('click',changeSign);
 
 
 Numbers.forEach((button)=>{
