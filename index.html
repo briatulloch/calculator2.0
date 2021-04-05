@@ -12,28 +12,31 @@
 <body>
   
 
-    <div class="calculator"> <!--aka calculator grid-->
-        <div class="screen"></div> <!--aka output-->
-            <button class="span-two" style="color:rgb(146, 241, 245);">AC</button>
-            <button style="color:rgb(146, 241, 245);">DEL</button>
-            <button style="color:pink;">÷</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button style="color:pink;">*</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button style="color:pink;">+</button>
-            <button>7</button>
-            <button>8</button>
-            <button>0</button>
-            <button style="color:pink;">-</button>
-            <button>.</button>
-            <button>0</button>
-            <button class="span-two" style="color:pink;">=</button>
-        
+    <div class="container"> <!--aka calculator grid-->
+        <div id="input"></div> <!--aka output-->
+            <button class="clearbtn span-two" value="AC" style="color:rgb(146, 241, 245);">AC</button>
+            <button class="negativebtn" value="+/-" style="color:rgb(146, 241, 245);">+/-</button>
+            <button class="divide" id="operator" value="÷" style="color:pink;">÷</button>
+            <button class="number" value="1">1</button>
+            <button class="number" value="2">2</button>
+            <button class="number" value="3">3</button>
+            <button id="operator" class="multiply" value="*" style="color:pink;">*</button>
+            <button class="number" value="4">4</button>
+            <button class="number" value="5">5</button>
+            <button class="number" value="6">6</button>
+            <button class="add" id="operator" value="+" style="color:pink;">+</button>
+            <button class="number" value="7">7</button>
+            <button class="number" value="8">8</button>
+            <button class="number" value="9">9</button>
+            <button class="subtract" id="operator" value="-" style="color:pink;">-</button>
+            <button class="number" value=".">.</button>
+            <button class="number" value="0">0</button>
+            <button class="equalbtn span-two" value="=" style="color:pink;">=</button>
+       
     </div>
-</body>
+    
+
 <script type="text/javascript" src="main.js"></script>
+</body>
+
 </html>

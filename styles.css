@@ -5,15 +5,12 @@
     font-weight:normal;
 }
 
-body{
-    /* so background fills entire page*/
-    
+body{ 
     background-color: #f6f0c4;
     background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
-
 }
     
-.calculator{
+.container{
     display:grid;
     justify-content:center;
     align-content:center;
@@ -22,7 +19,7 @@ body{
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-.calculator>button{
+.container>button{
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid white;
@@ -31,7 +28,7 @@ body{
     color: white;
 }
 
-.calculator>button:hover{
+.container>button:hover{
     background-color: rgb(159, 159, 236);
 }
 
@@ -41,7 +38,7 @@ body{
 
 }
 
-.screen{
+#input{
     /*make screen span entire width of calculator*/
     grid-column: 1/-1;
     background-color: black;
@@ -51,8 +48,10 @@ body{
     flex-direction: column;
     padding: 10px;
     /* if number gets too long it will wrap around display screen*/
-    word-wrap: break-word;
-    word-wrap:break-all;
+    overflow: hidden;
+    color: white;
+    font-size: 35px;
+    font-family: sans-serif;
     
 }
 
