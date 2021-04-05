@@ -51,6 +51,7 @@ function roundResult(value) {
 
 function clearDisplay() {
     display.textContent = '';
+    needScreenReset=false;
 }
 
 function add(a, b) {
