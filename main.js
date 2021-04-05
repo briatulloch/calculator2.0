@@ -24,6 +24,36 @@ function insertToDisplay(value) {
 }
 
 
+function setOperation(operator) {
+    if (currentOperation !== null) getResult();
+    firstOperand = display.textContent;
+    currentOperation = operator;
+    needScreenReset = true;
+}
+
+function getResult() {
+    if (currentOperation === null) return;
+    if (currentOperation === '÷' && display.textContent === '0') {
+        alert("Now you know you can't divide by 0!!😅");
+        clearDisplay();
+        return;
+    }
+    secondOperand = display.textContent;
+    display.textContent = 
+        roundResult(operate(currentOperation, firstOperand, secondOperand));
+        currentOperation = null;
+}
+
+//roundResult rounds answer to 2 decimal places
+function roundResult(value) {
+    return Math.round(value * 100) / 100;
+}
+
+function clearDisplay() {
+    display.textContent = '';
+    needScreenReset=false;
+}
+
 function add(a, b) {
     return a + b;
 }
@@ -40,14 +70,35 @@ function divide(a, b) {
     return a / b;
 }
 
+function operate(operator, a, b) {
+    //converts values to numbers
+    a = Number(a);
+    b = Number(b);
+    switch (operator) {
+        case "+":
+            return add(a, b);
+        case "-":
+            return subtract(a, b);
+        case "*":
+            return multiply(a, b);
+        case "÷":
+            if (b === 0) return null;
+            else return divide(a, b);
+    }
+}
 
 
 //event listeners
+clearBtn.addEventListener('click', clearDisplay);
+equalBtn.addEventListener('click', getResult);
 
 
 Numbers.forEach((button)=>{
     button.addEventListener('click', (e)=>insertToDisplay(button.textContent));
 });
 
+OperatorBtns.forEach((button)=>{
+    button.addEventListener('click',(e)=>setOperation(button.textContent));
+});
 
 
